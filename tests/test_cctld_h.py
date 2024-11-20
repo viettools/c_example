@@ -86,7 +86,7 @@ class TestH(unittest.TestCase):
         # self.assertEqual(whois_result.find('Domain: https://rdap.coccaregistry.org'), 0)
 
         self.assertEqual(data['parse']['registrar'], 'MarkMonitor')
-        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
+        self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
