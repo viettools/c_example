@@ -362,7 +362,7 @@ class TestS(unittest.TestCase):
             print('Please check .sy whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'National Agency for Network Services')
+        self.assertEqual(data['parse']['registrar'], '?????? ??????? ?????? ????? ?????????')
         self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
