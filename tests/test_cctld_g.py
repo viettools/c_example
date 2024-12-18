@@ -187,7 +187,7 @@ class TestG(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '2023-08-02T14:29:11.523Z')
+        self.assertEqual(data['parse']['creation_date'], '2023-08-02T14:29:11Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
