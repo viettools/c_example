@@ -111,6 +111,12 @@ var rdap_data_extend = `
     "na": {
         "rdap": "https://keetmans.omadhina.co.na/"
     },
+    "ng": {
+        "rdap": "https://whois.nic.net.ng/"
+    },
+    "gn": {
+        "rdap": "https://rdap.ande.gov.gn/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
