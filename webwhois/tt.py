@@ -5,17 +5,25 @@ import requests
 import re, json
 from bs4 import BeautifulSoup
 
-def parse_tt_data(regex_input, raw_data):
+def pre_raw_data(regex_group, extend_header_html=None, extend_footer_html=None):
     result = False
-    if raw_data:
-        regex_data = re.findall(regex_input, raw_data, re.DOTALL|re.M)
-        if regex_data:
-            pre_clean_data = regex_data[0]
-            pre_clean_data = pre_clean_data.replace('\xa0', '')
-            clean_data = BeautifulSoup(pre_clean_data, features='html.parser').get_text()
-            if clean_data:
-                result = clean_data.strip()
-                del clean_data
+    if regex_group:
+        result = regex_group.group(1)
+        result = result.replace('\xa0', '')
+        if extend_header_html:
+            result = extend_header_html + result
+        if extend_footer_html:
+            result = result + extend_footer_html
+    return result
+
+def parse_tt_data(regex_group, extend_header_html=None, extend_footer_html=None):
+    result = False
+    pre_clean_data = pre_raw_data(regex_group, extend_header_html, extend_footer_html)
+    if pre_clean_data:
+        clean_data = BeautifulSoup(pre_clean_data, features='html.parser').get_text()
+        if clean_data:
+            result = clean_data.strip()
+            del clean_data
     return result
 
 def whois_via_web(USER_AGENT, domain, domain_type):
@@ -50,14 +58,17 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     if req_post and req_post.status_code == 200 and req_post.text:
         raw_data = req_post.text
         if raw_data:
-            creation_date_details = parse_tt_data('Registration Date(.*?)Expiration Date', raw_data)
-            expiration_date_details = parse_tt_data('Expiration Date(.*?)Administrative Contact', raw_data)
-            ns_details = parse_tt_data('DNS Hostnames(.*?)DNS IP Addresses', raw_data)
-            
+            creation_date_details = parse_tt_data(re.search('Registration Date(.*?)Expiration Date', raw_data, re.DOTALL|re.M))
+            expiration_date_details = parse_tt_data(re.search('Expiration Date(.*?)<font', raw_data, re.DOTALL|re.M))
+            ns_details = parse_tt_data(re.search('DNS Hostnames(.*?)DNS IP Addresses', raw_data, re.DOTALL|re.M))
+            status_details = parse_tt_data(re.search('<font color=(.+)>(.*?)Administrative Contact', raw_data, re.DOTALL|re.M), '<font color=', '>')
+
             if creation_date_details:
                 result.append('Creation Date: {0}'.format(creation_date_details))
             if expiration_date_details:
                 result.append('Registry Expiry Date: {0}'.format(expiration_date_details))
+            if status_details:
+                result.append('Domain Status: {0} https://icann.org/epp'.format(status_details))
             if ns_details:
                 spl_ns = ns_details.split(',')
                 for ns in spl_ns:

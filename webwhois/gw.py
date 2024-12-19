@@ -88,7 +88,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
             
             status_details = parse_gw_general_data('<label>Estado:</label>(.*?)</fieldset>', False, raw_data)
             if status_details:
-                result.append('Domain Status: {0}'.format(status_details))
+                result.append('Domain Status: {0} {1}'.format(status_details, 'https://icann.org'))
             
     if result:
         result.append('Full WHOIS: https://nic.gw/en/')

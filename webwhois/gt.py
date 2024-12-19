@@ -64,6 +64,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                 
             expiry = parse_gt_data('Domain Name Information(.*?)Entitled Organization', '<strong>(.*?)</strong>', raw_data)
             if expiry:
+                expiry = expiry.replace('Expiration:', 'Registry Expiry Date:')
                 result.append(expiry)
             
             ns_server = parse_gt_data('Servers(.*?)ADMINISTRATIVE', '<strong>(.*?)</strong>', raw_data)

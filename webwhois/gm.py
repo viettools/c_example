@@ -38,7 +38,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     req = requests.Session()
     req_get = False
     try:
-        req_get = req.get('http://www.nic.gm/htmlpages/whois/{0}.htm'.format(domain), headers=headers, verify=False)
+        req_get = req.get('http://www.nic.gm/nic-scripts/checkdom.aspx?dname={0}'.format(domain), headers=headers, verify=False)
     except:
         pass
     

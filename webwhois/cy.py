@@ -70,10 +70,10 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                             result.append('Name Server: {0}'.format(ns_server.get('name')))
                     
                     if cy_id_data.get('domain_status', False):
-                        result.append('Domain Status: {0}'.format(cy_id_data.get('domain_status')))
+                        result.append('Domain Status: {0} {1}'.format(cy_id_data.get('domain_status'), 'https://icann.org/epp'))
         
         if result:
-            result.append('Full WHOIS: https://www.nic.cy')
+            result.append('\nFull WHOIS: https://www.nic.cy')
             final_result = {
                 'status': True,
                 'result': '\n'.join(result)

@@ -104,7 +104,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                 creation_date_details = parse_sv_data('Fecha Registro:(.*?)Fecha de vencimiento:', raw_data)
                 expiry_date_details = parse_sv_data('Fecha de Baja:(.*?)</table>', raw_data)
                 if domain_status_details:
-                    result.append('Domain Status: {0}'.format(domain_status_details))
+                    result.append('Domain Status: {0} https://icann.org/epp'.format(domain_status_details))
                 if admin_name_details:
                     result.append('Admin Name: {0}'.format(admin_name_details))
                 if email_details:
