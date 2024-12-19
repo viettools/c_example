@@ -46,7 +46,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
         for item in json_data.get('nameServer', []):
             result.append('Name Server: {0}'.format(item))
         for item in json_data.get('status', []):
-            result.append('Domain Status: {0}'.format(item))
+            result.append('Domain Status: {0} https://icann.org/epp'.format(item))
             
     if result:
         result.append('Full WHOIS: https://tracuutenmien.gov.vn/ or https://vnnic.vn/en/whois-information?lang=en')
