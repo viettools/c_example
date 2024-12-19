@@ -34,7 +34,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
             if json_data.get('registration date', False):
                 result.append('Creation Date: {0}'.format(json_data.get('registration date')))
             if json_data.get('status', False):
-                result.append('Domain Status: {0}'.format(json_data.get('status')))
+                result.append('Domain Status: {0} https://icann.org/epp'.format(json_data.get('status')))
         
         if result:
             result.append('Full WHOIS: http://www.nic.tj/whois.html')

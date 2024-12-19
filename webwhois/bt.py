@@ -48,7 +48,8 @@ def whois_via_web(USER_AGENT, domain, domain_type):
             billing_details = parse_bt_data('Billing Details :(.*?)</div>', raw_data)
             
             if domain_details:
-                domain_details = domain_details.replace('Registration Date :', 'Registration Date: ')
+                domain_details = domain_details.replace('Registration Date :', 'Creation Date: ')
+                domain_details = domain_details.replace('Expiration Date:', 'Registry Expiry Date: ')
                 result.append(domain_details)
             if customer_details:
                 result.append(customer_details)
