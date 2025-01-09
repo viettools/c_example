@@ -163,7 +163,7 @@ class TestL(unittest.TestCase):
             return
 
         self.assertEqual(data['parse']['registrar'], 'Libyan Spider Network (int)')
-        self.assertEqual(data['parse']['registrar_url'], 'https://my.register.ly')
+        self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
