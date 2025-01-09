@@ -277,6 +277,56 @@ class TestT(unittest.TestCase):
         self.assertEqual(data['parse']['creation_date'], '05.03.2022 08:48:34')
         self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
+        
+    '''
+        Test Reserved Domains
+    '''
+    
+    def test_reserved_domain_tl(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "fuck.tl"},
+        )
+        data = json.loads(response.content)
+        
+        if not data['status']:
+            print('Please check .tl whois server - Reserved Domains!')
+            return
+        
+        self.assertEqual(data['parse']['registrar'], '')
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(len(data['parse']['domain_status']), 1)
+        self.assertEqual(len(data['parse']['nameservers']), 0)
+        
+        self.assertEqual(data['parse']['creation_date'], '')
+        self.assertEqual(data['parse']['updated_date'], '')
+        self.assertEqual(data['parse']['expiry_date'], '')
+        
+        self.assertEqual(data['parse']['domain_status'][0], 'Reserved Domain')
+        
+    def test_reserved_domain_tw(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "xxx.tw"},
+        )
+        data = json.loads(response.content)
+        
+        if not data['status']:
+            print('Please check .tw whois server - Reserved Domains!')
+            return
+        
+        self.assertEqual(data['parse']['registrar'], '')
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(len(data['parse']['domain_status']), 1)
+        self.assertEqual(len(data['parse']['nameservers']), 0)
+        
+        self.assertEqual(data['parse']['creation_date'], '')
+        self.assertEqual(data['parse']['updated_date'], '')
+        self.assertEqual(data['parse']['expiry_date'], '')
+        
+        self.assertEqual(data['parse']['domain_status'][0], 'Reserved Domain')
     
 if __name__ == '__main__':
     unittest.main()

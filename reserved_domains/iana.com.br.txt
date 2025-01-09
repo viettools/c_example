@@ -1,0 +1,17 @@
+% Copyright (c) Nic.br
+%  The use of the data below is only permitted as described in
+%  full by the Use and Privacy Policy at https://registro.br/upp ,
+%  being prohibited its distribution, commercialization or
+%  reproduction, in particular, to use it for advertising or
+%  any similar purpose.
+%  2025-01-09T06:41:52-03:00 - IP: 167.235.207.119
+
+% reserved:    trademark
+
+% Security and mail abuse issues should also be addressed to
+% cert.br, http://www.cert.br/ , respectivelly to cert@cert.br
+% and mail-abuse@cert.br
+%
+% whois.registro.br accepts only direct match queries. Types
+% of queries are: domain (.br), registrant (tax ID), ticket,
+% provider, CIDR block, IP and ASN.

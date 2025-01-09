@@ -87,7 +87,7 @@ domain_name_kw_whois,domain_name_kw,"whois","whois.nic.kw","Registrar:(.*?)\n","
 domain_name_ky_whois,domain_name_ky,"whois","whois.kyregistry.ky","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_kz_whois,domain_name_kz,"whois","whois.nic.kz","Current Registar:(.*?)\n","","Domain status\s+:(.*?)Registar created","server[\.]{2,}:(.*?)\n","Domain created:(.*?)(?:\(|\n)","Last modified\s+:(.*?)(?:\(|\n)",""
 domain_name_la_whois,domain_name_la,"whois","whois.nic.la","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
-domain_name_lb_whois,domain_name_lb,"whois","registry.lbdr.org.lb","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
+domain_name_lb_whois,domain_name_lb,"whois","whois.lbdr.org.lb","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_lc_whois,domain_name_lc,"whois","whois.donuts.co","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 
 domain_name_ls_whois,domain_name_ls,"whois","whois.nic.ls","registrar:(.*?)\n","","","nserver:(.*?)\n","registered:(.*?)\n","","expire:(.*?)\n"
