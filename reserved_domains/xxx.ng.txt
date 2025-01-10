@@ -1,0 +1,4 @@
+Domain Name: xxx.ng
+Domain Status: Prohibited String - Domain Cannot Be Registered
+Notes: This domain is not allowed under registry policy (2306).
+>>> Last update of WHOIS database: 2025-01-10T03:37:05.471Z <<<

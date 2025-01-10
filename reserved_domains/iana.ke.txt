@@ -1,0 +1,4 @@
+Domain Name: iana.ke
+Domain Status: Prohibited String - Domain Cannot Be Registered
+Notes: This domain is not allowed under registry policy (2306).
+>>> Last update of WHOIS database: 2025-01-09T10:34:19.454Z <<<

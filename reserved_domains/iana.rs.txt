@@ -1,0 +1,21 @@
+% The data in the Whois database are provided by RNIDS
+
+% for information purposes only and to assist persons in obtaining
+
+% information about or related to a domain name registration record. 
+
+% Data in the database are created by registrants and we do not guarantee 
+
+% their accuracy. We reserve the right to remove access 
+
+% for entities abusing the data, without notice.
+
+% All timestamps are given in Serbian local time. 
+
+%
+
+Domain name: iana.rs
+
+
+
+This domain is reserved

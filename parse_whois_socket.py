@@ -113,6 +113,53 @@ class ParseWhoisSocket:
                     result.append(item)
             return result
         
+        def check_reserved_domain(extension_name, whois_data):
+            result = False
+            if extension_name in ['ac', 'bm', 'bz'] and whois_data.find('This name is reserved by the Registry') > -1:
+                result = True
+            elif extension_name == 'rs' and whois_data.find('This domain is reserved') > -1:
+                result = True
+            elif extension_name == 'au' and (whois_data.find('Reserved by Registry') > -1 or whois_data.find('This domain name is on Priority Hold status') > -1):
+                result = True
+            elif extension_name in ['bj', 'cm', 'cx', 'cv', 'rw', 'ss', 'ng', 'nf', 'do', 'gy', 'hn',
+                                    'ke', 'ki', 'kw', 'ms', 'ma', 'ly', 'kn', 'sb', 'tl'] and \
+                    whois_data.find('Prohibited String - Domain Cannot Be Registered') > -1:
+                result = True
+            elif extension_name in ['mg', 'pe'] and whois_data.find('Prohibited String - Object Cannot Be Registered') > -1:
+                result = True
+            elif extension_name in ['ca', 'sg', 'nz'] and whois_data.find('The domain name requested has usage restrictions applied to it') > -1:
+                result = True
+            elif extension_name == 'cn' and whois_data.find('you apply can not be registered online') > -1:
+                result = True
+            elif extension_name == 'qa' and whois_data.find('The Domain Name is not Available') > -1:
+                result = True
+            elif extension_name == 'by' and whois_data.find('object is blocked') > -1:
+                result = True
+            elif extension_name == 'ae' and whois_data.find('has been reserved by aeDA Regulator') > -1:
+                result = True
+            elif extension_name == 'am' and whois_data.find('Reserved name: Temporarily reserved') > -1:
+                result = True
+            elif extension_name == 'be' and whois_data.find('Status:	NOT ALLOWED') > -1:
+                result = True
+            elif extension_name == 'bg' and whois_data.find('registration status: forbidden') > -1:
+                result = True
+            elif extension_name == 'bi' and whois_data.find('This string is on a restricted list, if registered, it will require approval') > -1:
+                result = True
+            elif extension_name == 'br' and whois_data.find('% reserved') > -1:
+                result = True
+            elif extension_name == 'om' and whois_data.find('Reserved Domain Name') > -1:
+                result = True
+            elif extension_name == 'dm' and whois_data.find('This domain is not available') > -1:
+                result = True
+            elif extension_name == 'kr' and whois_data.find('This request domain name is restricted') > -1:
+                result = True
+            elif extension_name == 'my' and whois_data.find('This name is not available for registration') > -1:
+                result = True
+            elif extension_name == 'tw' and whois_data.find('reserved name') > -1:
+                result = True
+            
+            return result
+        
         vals = {}
         if not raw_data:
             return vals
@@ -121,6 +168,14 @@ class ParseWhoisSocket:
                 'nameservers', 'creation_date', 'updated_date', 'expiry_date']
         
         for item in arr:
+            # Reserved Domain
+            if item == 'domain_status':
+                is_reserved = check_reserved_domain(self.extension_name, raw_data)
+                if is_reserved:
+                    vals.update({'domain_status': 'Reserved Domain'})
+                    continue
+            # End 'Reserved Domain'
+            
             dict_regex_query = self.regex_data.get(self.extension_name, {})
             if not dict_regex_query:
                 dict_regex_query = self.regex_data['iana']

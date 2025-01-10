@@ -1,0 +1,15 @@
+query : xxx.kr
+
+
+# KOREAN(UTF8)
+
+상기 도메인이름은 도메인이름의 안정적 관리와 공공의 이익 등을 위하여 
+등록자격이 제한된 도메인이름입니다.
+
+
+# ENGLISH
+
+This request domain name is restricted to specifically qualified registrants for stable management of domain names and public interest.
+
+
+- KISA/KRNIC WHOIS Service -

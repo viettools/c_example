@@ -1,0 +1,14 @@
+Domain Name: whois.ss
+Domain Status: Prohibited String - Domain Cannot Be Registered
+
+
+Copyright SSNIC
+
+The data below is provided for information purposes  and to assist persons in obtaining information about or related to domain name registrations.
+By submitting a whois query, you agree to use this data only for lawful purposes.
+
+remarks:     Security issues should also be addressed to noc@nic.ss
+remarks:     Mail abuse issues should also be addressed to abuse@nic.ss
+ 
+whois.nic.ss accepts only direct match queries.
+Types of queries are: domains (.SS) and POCs.

@@ -1,0 +1,14 @@
+ID ccTLD whois server
+Please see 'whois -h whois.id help' for usage.
+
+Domain ID: PANDI-DO203471
+Domain Name: iana.id
+Created On: 2012-02-24 13:35:24
+Last Updated On: 2019-02-25 00:09:40 
+
+Status: RESERVED
+
+DNSSEC: Unsigned
+
+Abuse Domain Report https://pandi.id/domain-abuse-form/?lang=en
+For more information on Whois status codes, please visit https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en

@@ -1,0 +1,15 @@
+Error code: 01044
+
+Error message: The domain name requested has usage restrictions applied to it. Please see your Registrar for more details.
+
+
+
+% ----------------------------------------------------------------------
+
+% SGNIC WHOIS Server
+
+% ----------------------------------------------------------------------
+
+%
+
+% This data is provided for information purposes only.
