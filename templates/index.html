@@ -38,6 +38,16 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-show-generate-box">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-align-box-center-stretch"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M11 17h2" /><path d="M9 12h6" /><path d="M10 7h4" /></svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        Generate
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-show-about-me">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg>
@@ -135,13 +145,13 @@
                             Creation Date: 15/08/2023
                         </p>
                         <p>
-                            Updated Date: 10/01/2025
+                            Updated Date: 13/01/2025
                         </p>
                         <p>
                             Author: MAI TIẾN DŨNG
                         </p>
                         <p>
-                            Version: 3.3.2
+                            Version: 3.3.3
                         </p>
                         <p>
                             Support: https://check.rs
@@ -152,6 +162,31 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-blur fade" id="modal-show-generate-box" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Generate Domains</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-1 row">
+                            <label class="col-3 col-form-label">Keyword:</label>
+                            <div class="col input-group">
+                                <input id="generate_domain_keyword_input" type="text" class="form-control" placeholder="Your Keyword">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <textarea class="form-control" rows="10" id="generate_domain_keyword_result"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn me-auto" data-bs-dismiss="modal" id="generate_domain_cut_cc_sld">Close</button>
+                        <button type="button" class="btn btn-primary" id="generate_domain_keyword_cc_sld">Generate ccSLDs</button>
                     </div>
                 </div>
             </div>
