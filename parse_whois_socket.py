@@ -147,7 +147,7 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'br' and whois_data.find('% reserved') > -1:
                 result = True
-            elif extension_name == 'om' and whois_data.find('Reserved Domain Name') > -1:
+            elif extension_name in ['om', 'tv', 'vu'] and whois_data.find('Reserved Domain Name') > -1:
                 result = True
             elif extension_name == 'dm' and whois_data.find('This domain is not available') > -1:
                 result = True
@@ -156,6 +156,8 @@ class ParseWhoisSocket:
             elif extension_name == 'my' and whois_data.find('This name is not available for registration') > -1:
                 result = True
             elif extension_name == 'tw' and whois_data.find('reserved name') > -1:
+                result = True
+            elif extension_name == 'su' and whois_data.find('Domain can not be registered') > -1:
                 result = True
             
             return result
