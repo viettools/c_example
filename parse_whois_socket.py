@@ -125,9 +125,9 @@ class ParseWhoisSocket:
                                     'ke', 'ki', 'kw', 'ms', 'ma', 'ly', 'kn', 'sb', 'tl'] and \
                     whois_data.find('Prohibited String - Domain Cannot Be Registered') > -1:
                 result = True
-            elif extension_name in ['mg', 'pe'] and whois_data.find('Prohibited String - Object Cannot Be Registered') > -1:
+            elif extension_name in ['mg', 'pe', 'ps'] and whois_data.find('Prohibited String - Object Cannot Be Registered') > -1:
                 result = True
-            elif extension_name in ['ca', 'sg', 'nz'] and whois_data.find('The domain name requested has usage restrictions applied to it') > -1:
+            elif extension_name in ['ca', 'sg', 'nz', 'sx'] and whois_data.find('The domain name requested has usage restrictions applied to it') > -1:
                 result = True
             elif extension_name == 'cn' and whois_data.find('you apply can not be registered online') > -1:
                 result = True
