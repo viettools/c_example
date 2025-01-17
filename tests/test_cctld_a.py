@@ -126,14 +126,14 @@ class TestA(unittest.TestCase):
             print('[+] -----> .AI: Please check .ai whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'Markmonitor')
-        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(data['parse']['registrar'], 'MarkMonitor Inc.')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '')
-        self.assertEqual(len(data['parse']['updated_date']), 0)
-        self.assertEqual(len(data['parse']['expiry_date']), 0)
+        self.assertEqual(data['parse']['creation_date'], '2017-12-16T05:37:20Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
         
     def test_google_am(self):
         response = client.post(
