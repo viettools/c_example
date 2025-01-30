@@ -117,6 +117,9 @@ var rdap_data_extend = `
     "gn": {
         "rdap": "https://rdap.ande.gov.gn/"
     },
+    "mg": {
+        "rdap": "https://rdap.nic.mg/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },

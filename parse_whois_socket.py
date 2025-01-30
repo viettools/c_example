@@ -115,17 +115,17 @@ class ParseWhoisSocket:
         
         def check_reserved_domain(extension_name, whois_data):
             result = False
-            if extension_name in ['ac', 'bm', 'bz'] and whois_data.find('This name is reserved by the Registry') > -1:
+            if extension_name in ['ac', 'bm', 'bz', 'sh'] and whois_data.find('This name is reserved by the Registry') > -1:
                 result = True
             elif extension_name == 'rs' and whois_data.find('This domain is reserved') > -1:
                 result = True
             elif extension_name == 'au' and (whois_data.find('Reserved by Registry') > -1 or whois_data.find('This domain name is on Priority Hold status') > -1):
                 result = True
             elif extension_name in ['bj', 'cm', 'cx', 'cv', 'rw', 'ss', 'ng', 'nf', 'do', 'gy', 'hn',
-                                    'ke', 'ki', 'kw', 'ms', 'ma', 'ly', 'kn', 'sb', 'tl'] and \
+                                    'ke', 'ki', 'kw', 'ms', 'ma', 'ly', 'kn', 'sb', 'tl', 'mg'] and \
                     whois_data.find('Prohibited String - Domain Cannot Be Registered') > -1:
                 result = True
-            elif extension_name in ['mg', 'pe', 'ps', 'tc'] and whois_data.find('Prohibited String - Object Cannot Be Registered') > -1:
+            elif extension_name in ['pe', 'ps', 'tc'] and whois_data.find('Prohibited String - Object Cannot Be Registered') > -1:
                 result = True
             elif extension_name in ['ca', 'sg', 'nz', 'sx'] and whois_data.find('The domain name requested has usage restrictions applied to it') > -1:
                 result = True

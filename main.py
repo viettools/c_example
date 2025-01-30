@@ -279,6 +279,10 @@ def query_rdap_proxy(domain: str | None = None):
             rdap_url = 'https://rdap.register.si'
         elif spl_domain[-1] == 'ye':
             rdap_url = 'https://rdap.y.net.ye'
+        elif spl_domain[-1] == 'ch':
+            rdap_url = 'https://rdap.nic.ch'
+        elif spl_domain[-1] == 'li':
+            rdap_url = 'https://rdap.nic.li'
     
     if rdap_url:
         req = requests.Session()

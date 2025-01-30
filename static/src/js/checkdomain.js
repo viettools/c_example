@@ -376,7 +376,7 @@ function identify_domain(domain)
 
     if(result.extension in rdap_data)
     {
-        if(['de', 've', 'tz', 'uz', 'kg', "ml", "si", "ye"].includes(result.extension))
+        if(['de', 've', 'tz', 'uz', 'kg', "ml", "si", "ye", "ch", "li"].includes(result.extension))
         {
             // Bypass: Response body is not available to scripts (Reason: CORS Missing Allow Origin)
             result.rdap_url = '/api/v1/proxy/rdap?domain=' + parse_domain;

@@ -23,7 +23,7 @@ class TestM(unittest.TestCase):
             return
 
         self.assertEqual(data['parse']['registrar'], 'GENIOUS COMMUNICATIONS')
-        self.assertEqual(data['parse']['registrar_url'], 'http://www.genious.net')
+        self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
@@ -87,7 +87,7 @@ class TestM(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '2009-06-18T08:38:20.671Z')
+        self.assertEqual(data['parse']['creation_date'], '2009-06-18T08:38:20Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
         
